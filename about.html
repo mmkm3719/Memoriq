@@ -1,179 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoriq: Memory & Focus Games - Train Your Brain</title>
-    <style>
-        :root {
-            --primary-color: #27ae60;
-            --secondary-color: #2c3e50;
-            --bg-color: #f8f9fa;
-            --text-color: #333333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Memoriq - Memory & Focus Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border: #E2E8F0;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
+    .header {
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 24px;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .header h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
 
-        .section-title {
-            color: var(--primary-color);
-            border-left: 4px solid var(--primary-color);
-            padding-left: 10px;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+    .header .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+    .section-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 22px;
+      margin: 28px 0 12px;
+      color: var(--text-main);
+    }
 
-        .feature-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--primary-color);
-        }
+    p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
 
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--secondary-color);
-        }
+    .highlight-box {
+      background: #F1F5F9;
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 20px 0;
+      font-weight: 500;
+      color: var(--text-main);
+    }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
+    .feature-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
 
-        .video-container iframe, .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+    .feature-list li {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
 
-        .download-btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 14px 28px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
+    .feature-list strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
 
-        .download-btn:hover {
-            background-color: #1a252f;
-        }
+    /* App Details Grid */
+    .app-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 2px solid var(--bg);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: #eef2f5;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
 
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-    </style>
+    .info-item .label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .info-item .value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    /* Native Expandable Section */
+    details {
+      cursor: pointer;
+    }
+
+    summary {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 15px;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .permissions-box {
+      margin-top: 12px;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .permissions-box h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .permissions-box ul {
+      padding-left: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .permissions-box li {
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Memoriq: Memory & Focus Games</h1>
-        <p>Sharpen your mind, enhance cognitive recall, and boost daily concentration.</p>
-        <br>
-        <a href="https://play.google.com/store/apps/details?id=com.bluebirdone.memoriqbrainfocusgames" class="download-btn">Get it on Google Play</a>
-    </header>
-
-    <div class="container">
-        
-        <h2 class="section-title">About the Game</h2>
-        <p>
-            <strong>Memoriq</strong> is a fast-paced, visually engaging brain training application designed to sharpen your visual memory, spatial tracking, and concentration skills. Whether you're taking a quick 2-minute study break or challenging yourself with complex pattern recall, Memoriq delivers rewarding cognitive exercises for all skill levels.
-        </p>
-
-        <!-- Optional Video Section -->
-        <h2 class="section-title">Gameplay Preview</h2>
-        <div class="video-container">
-            <!-- Replace the src URL below with your YouTube promo video embed or HTML5 video link -->
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Memoriq Gameplay Trailer" allowfullscreen></iframe>
-        </div>
-
-        <h2 class="section-title">Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>🧠 Visual Pattern Recall</h3>
-                <p>Train your brain to recognize and track shifting spatial tiles, sequence challenges, and memory patterns.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⚡ Adaptive Difficulty</h3>
-                <p>Progressively challenging board sizes and time limits that adapt as your memory speed improves.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📱 Smooth Performance</h3>
-                <p>Designed with lightweight Flutter architecture for buttery-smooth 60 FPS gameplay and instant load times.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🔒 Privacy First</h3>
-                <p>Fully compliant with global privacy standards (GDPR/CCPA) managed via Google UMP consent routines.</p>
-            </div>
-        </div>
-
+  <div class="container">
+    <div class="header">
+      <h1>Memoriq</h1>
+      <div class="subtitle">Memory & Focus Games</div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Memoriq Developer. All rights reserved.</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> | Contact: <strong>mmkm3719@gmail.com</strong>
-        </p>
-    </footer>
+    <h2 class="section-title">About this app</h2>
+    <p>Memoriq helps players of all ages enhance memory, focus, and cognitive skills through fun, engaging mini-games. Designed with sequence tracking, spatial memory matching, and endless challenges, Memoriq provides a daily mental workout to sharpen concentration and brain speed.</p>
+
+    <div class="highlight-box">
+      The ultimate brain training companion designed to build memory recall, focus, and pattern recognition.
+    </div>
+
+    <h2 class="section-title">🚀 Why Players Choose Memoriq:</h2>
+    <ul class="feature-list">
+      <li>
+        <strong>Multiple Mind Modes</strong>
+        Challenge yourself with sequence recall, memory grid matching, and endless survival modes designed to test speed and accuracy.
+      </li>
+      <li>
+        <strong>Adaptive Difficulty</strong>
+        Progress through increasingly challenging levels that adapt as your memory retention and focus improve over time.
+      </li>
+      <li>
+        <strong>Daily Brain Training</strong>
+        Quick, engaging game sessions designed for 5-to-10-minute daily practice routines to keep your cognitive performance sharp.
+      </li>
+      <li>
+        <strong>Custom Themes & Skins</strong>
+        Personalize your experience with colorful icon sets, sleek dark themes, and customizable visual styles.
+      </li>
+    </ul>
+
+    <h2 class="section-title">✨ Simple, Safe, and Engaging:</h2>
+    <p>Distraction-free design lets you focus purely on improving your memory skills and high scores.</p>
+
+    <ul class="feature-list">
+      <li>
+        <strong>No Account Required</strong>
+        Jump straight into playing without filling out personal info or completing registration steps.
+      </li>
+      <li>
+        <strong>Offline Play Support</strong>
+        Practice memory drills anytime, anywhere—even without an active internet connection.
+      </li>
+    </ul>
+
+    <!-- Info Matrix -->
+    <div class="app-info-grid">
+      <div class="info-item">
+        <span class="label">Version</span>
+        <span class="value">1.0.0</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Updated on</span>
+        <span class="value">Oct 2026</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Requires Android</span>
+        <span class="value">7.0 and up</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Downloads</span>
+        <span class="value">100+ downloads</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Content rating</span>
+        <span class="value">Everyone</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Permissions</span>
+        <details>
+          <summary>View details</summary>
+          <div class="permissions-box">
+            <h4>Other Permissions</h4>
+            <ul>
+              <li>view network connections</li>
+              <li>full network access</li>
+              <li>change your audio settings</li>
+              <li>run at startup</li>
+              <li>control vibration</li>
+              <li>prevent device from sleeping</li>
+              <li>Google Play license check</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="info-item">
+        <span class="label">Released on</span>
+        <span class="value">Oct 2026</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Offered by</span>
+        <span class="value">mmkm3719</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="https://mmkm3719.github.io/memoriq/index.html">Privacy Policy</a> | &copy; 2026 Memoriq</p>
+  </footer>
 
 </body>
 </html>
